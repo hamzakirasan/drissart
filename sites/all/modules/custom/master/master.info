@@ -1,0 +1,4 @@
+name = Master
+description = master module
+package = project
+core = 7.x

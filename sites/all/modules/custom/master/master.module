@@ -1,0 +1,12 @@
+<?php
+	module_load_include('inc', 'master', 'includes/alters');
+	module_load_include('inc', 'master', 'includes/form');
+	module_load_include('inc', 'master', 'includes/theme');
+	module_load_include('inc', 'master', 'includes/menu');
+	module_load_include('inc', 'master', 'includes/tools');
+	module_load_include('inc', 'master', 'includes/globals');
+	module_load_include('inc', 'master', 'includes/callback');
+	module_load_include('inc', 'master', 'includes/admin');
+	module_load_include('inc', 'master', 'includes/block');
+	
+

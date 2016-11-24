@@ -1,0 +1,52 @@
+/* module filter tabs */
+#module-filter-tabs {
+	ul, li:first-child, li:first-child a {
+		border-top-left-radius: 3px;
+	}
+	ul {
+		border-color: #e4e4e4;
+	}
+	li {
+		background-color: #f6f6f6;
+		border-top-color: #e4e4e4;
+		a {
+			strong {
+				color: #444;
+			}
+			.summary {
+				color: #999;
+			}
+		}
+	}
+}
+
+/* */
+html.js #module-filter-modules, html.js #module-filter-submit.fixed {
+	border-color: #e4e4e4;
+}
+html.js .module-filter-inputs-wrapper input[name="module_filter[name]"] {
+    width: 70%;
+}
+
+html.js #module-filter-modules {
+	border-left: none;
+	border-radius: 3px;
+	border-top-left-radius: 0;
+	margin-left: 239px;
+	padding-top: 10px;
+}
+
+.module-filter-no-results {
+	margin-top: 10px;
+}
+.module-filter-clear {
+	a {
+		@include button2;
+		padding: {
+			bottom: 7px;
+			top: 8px;
+		}
+		position: static;
+	}
+}
+

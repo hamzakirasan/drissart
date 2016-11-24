@@ -19,7 +19,8 @@ function pdf_artisan() {
 
     try {
     ob_start();
-        $html2pdf = new HTML2PDF('P', 'A4', 'fr');
+        $html2pdf = new HTML2PDF('P', 'A4', 'en', true, 'UTF-8');
+        $html2pdf->setDefaultFont('arialunicid0');
         $html2pdf->writeHTML($content);
         $html2pdf->Output($name, 'I');
     } catch (HTML2PDF_exception $e) {

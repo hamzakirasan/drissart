@@ -1,0 +1,82 @@
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+ul, ol {
+    margin-bottom: 15px;
+}
+
+div:empty {
+	display: none;
+}
+
+#page-title {
+	color: $link-color;
+	font: {
+		size: $fontsize-24;
+		weight: 200;
+	}
+	margin-bottom: 10px;
+}
+
+.views-admin h1.unit-title {
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: $fontsize-20;
+}
+
+h3 {
+	font-size: $fontsize-16;
+}
+
+h4 {
+	font-size: $fontsize-14;
+}
+
+.more-link {
+	text-align: left;
+	a {
+		@include button;
+		min-width: 150px;
+	}
+}
+
+dl {
+	dt {
+		border-top: 1px dashed #e4e4e4;
+		padding-top: 10px;
+		&:first-child {
+			border-top: none;
+			padding-top: 0;
+		}
+		+ dt {
+			margin-top: 10px;
+		}
+		&:empty {
+			display: none;
+		}
+	}
+	dd {
+		font-size: $fontsize-13;
+		margin-left: 0;
+		padding-bottom: 10px;
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+label {
+    font-weight: 100;
+}
+
+pre {
+	margin: {
+		bottom: 15px;
+		top: 15px;
+	}
+}

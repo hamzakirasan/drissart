@@ -1,0 +1,146 @@
+/* action links 
+.action-links{
+	@include clearfix;
+	padding-left: 0;
+	li {
+		list-style: none;
+		display: inline-block;
+		+ li {
+			margin-left: 3px;
+		}
+		a {
+			@include button2;
+		}
+	}
+}*/
+
+.tabs {
+	position: relative;
+	z-index: 1;
+	~ .action-links {
+		position: absolute;
+		right: 0;
+		top: 36px;
+		z-index: 1;
+	}
+}
+
+.tabledrag-toggle-weight-wrapper{
+	margin-bottom: 5px;
+}
+
+/* ul.primary menu */
+ul.primary {
+	@include clearfix;
+	border: none;
+	font-size: $fontsize-14;
+	margin: 0 0 -1px;
+	padding-left: 0;
+	position: relative;
+    z-index: 2;
+	li {
+		display: inline-block;
+		a {
+			background-color: transparent;
+			border: 1px solid transparent;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			color: #a7b1c2;
+			display: inline-block;
+			margin: 0;
+			padding: 10px;
+			&:hover, &:focus {
+				color: $body-color;
+			}
+		}
+		&.active {
+			a {
+				background-color: #fff;
+				border-color: #e4e4e4;
+				border-bottom-color: transparent;
+				color: $body-color;
+			}
+		}
+	}
+	~ h2.element-invisible ~ ul.secondary {
+		float: right;
+		position: relative;
+		z-index: 2;
+		margin: {
+			bottom: 0;
+			top: -38px;
+		}
+		text-align: right;
+	}
+}
+
+/* vertical-tabs */
+.vertical-tabs {
+	background-color: #fff;
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+	font-size: $fontsize-13;
+	ul.vertical-tabs-list {
+		border-top-color: #e4e4e4;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
+		.first {
+			border-top-left-radius: 3px;
+			border-top-right-radius: 0;
+		}
+		.last {
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 0;
+		}
+		li a {
+			&:hover {
+				outline: none;
+				text-decoration: none;
+			}
+			&:focus, &:active, &:hover {
+				strong {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	fieldset.vertical-tabs-pane {
+		padding: 0;
+	}
+	div.vertical-tabs-panes {
+		a.token-dialog {
+			display: inline-block;
+			margin: 15px;
+		}
+	}
+}
+
+/* secondary */
+ul.secondary, .action-links {
+    border-bottom: none;
+	font-size: $fontsize-13;
+	margin: 0;
+	padding: 12px 0 10px;
+	li {
+		border-right: none;
+		display: inline-block;
+		line-height: 1.2;
+		margin: 0;
+		padding: 0 10px 0 0;
+		+ li {
+			border-left: 2px dotted #999;
+			padding-left: 9px;
+		}
+		a {
+			color: #999;
+			&:hover, &:focus {
+				color: $link-color;
+			}
+		}
+	}
+	a.active {
+		border-bottom: none;
+		color: $link-color;
+	}
+}
+

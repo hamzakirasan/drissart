@@ -1,0 +1,37 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800");
+@import url("../fonts/simpleline/simple-line-icons.css");
+
+/*------------------------------------------------------------------
+BOOTSTRAP CSS
+-------------------------------------------------------------------*/
+@import "bootstrap/bootstrap";
+
+
+// Core variables and mixins
+@import "includes/mixins";
+@import "includes/variables";
+
+/*------------------------------------------------------------------
+TEMPLATE CSS
+-------------------------------------------------------------------*/
+// modules
+@import "modules/commerce";
+@import "modules/context";
+@import "modules/i18n";
+@import "modules/panel";
+@import "modules/pathauto";
+@import "modules/ubercart";
+@import "modules/views";
+
+// Partials
+@import "partials/elements";
+@import "partials/form";
+@import "partials/menu";
+@import "partials/modal";
+@import "partials/overlay";
+@import "partials/tab";
+@import "partials/table";
+@import "partials/common";
+@import "partials/dashboard";
+@import "partials/module";
+@import "partials/editor";

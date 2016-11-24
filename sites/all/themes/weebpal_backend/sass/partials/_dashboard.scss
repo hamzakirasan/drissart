@@ -1,0 +1,152 @@
+/* dashboard */
+.dashboard-region > .region > {
+	.block, .dashboard-placeholder {
+		background-color: #fff;
+		border: 1px solid #e4e4e4;
+		border-radius: 3px;
+		margin: 0 0 15px;
+		padding: 15px;
+	}
+}
+#dashboard {
+	margin: {
+		left: -7px;
+		right: -8px;
+	}
+	padding-bottom: 30px;
+	.customize, div#dashboard_main, div#dashboard_sidebar {
+		padding: {
+			left: 7px;
+			right: 8px;
+		}
+	}
+	div#dashboard_main {
+		margin-right: 0;
+	}
+	div#dashboard_sidebar {
+		width: 35%;
+	}
+	.region {
+		margin: 0;
+	}
+	.customize {
+		text-align: right;
+		.action-links li {
+			margin: {
+				right: 3px;
+				left: 0;
+			}
+		}
+	}
+	.canvas-content {
+		padding: 10px 0 15px;
+		position: relative;
+		a.button {
+			@include button2;
+			margin: 0;
+			min-width: 150px;
+			text-align: center;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		> p {
+			margin-bottom: 15px;
+		}
+	}
+	.ui-sortable {
+		border: 1px dashed #acacac;
+		padding: 15px;
+		.block {
+			h2 {
+				background: none;
+				font-size: $fontsize-14;
+				margin: 0 0 25px;
+				padding: 10px 15px 24px 0;
+				text-transform: none;
+				&:before {
+					content: "\f047";
+					float: left;
+					@include fontawesome;
+					padding-right: 5px;
+				}
+			}
+		}
+	}
+	#disabled-blocks {
+		padding: 0;
+		.region {
+			background-color: #ededed;
+			border-color: #e1e1e1;
+			border-radius: 3px;
+			padding: 15px;
+		}
+		.block, .block-placeholder {
+			background: #fff;
+			color: $body-color;
+			margin: 0 15px 15px 0;
+			min-width: 240px;
+			padding: 14px 10px 14px 15px;
+			&:after {
+				color: #bdbbbc;
+				content: "\f013";
+				float: right;
+				@include fontawesome;
+				font-size: $fontsize-16;
+			}
+			h2 {
+				border-bottom: none;
+				margin: 0;
+				padding: 0;
+				&:before {
+					margin-top: 2px;
+				}
+			}
+		}
+	}
+	.dashboard-add-other-blocks {
+		margin: 0;
+	}
+	&.customize-inactive {
+		#disabled-blocks, .dashboard-region .ui-sortable {
+			.block:hover {
+				background: #fff;
+				color: $body-color;
+				h2 {
+					background: none;
+					color: $body-color;
+				}
+			}
+		}
+	}
+}
+.dashboard-add-other-blocks a {
+	border: 1px dotted #c0c0c0;
+	border-radius: 4px;
+	color: $body-color;
+	display: inline-block;
+	min-width: 240px;
+    padding: 14px 10px 14px 15px;
+	&:before {
+		content: "\f067";
+		@include fontawesome;
+		font-size: $fontsize-16;
+		padding-right: 5px;
+	}
+}
+.canvas {
+	text-align: left;
+}
+
+.dashboard-region {
+	.item-list ul li {
+		list-style: none;
+		margin-left: 0;
+		span {
+			color: #999;
+			display: block;
+			font-size: $fontsize-12;
+		}
+	}
+}
+

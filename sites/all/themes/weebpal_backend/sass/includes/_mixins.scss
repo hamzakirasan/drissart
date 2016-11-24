@@ -1,0 +1,62 @@
+
+@mixin opensan{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+@mixin clearfix {
+    &:after {
+        content: ".";
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+    }
+}
+
+@mixin fontawesome {
+    display: inline-block;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin simpleline {
+	font-family: 'Simple-Line-Icons';
+}
+
+@mixin button {
+    display: inline-block;
+    border: none;
+    background: $link-color;
+    color: #fff;
+    padding: 6px 20px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+	text-align: center;
+    &:hover, &:focus{
+        background: darken($link-color, 10%);
+		color: #fff;
+    }
+}
+
+@mixin button2 {
+    display: inline-block;
+    border: none;
+    background: #6dd29a;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+	text-align: center;
+    &:hover, &:focus{
+        background: #4aaa75;
+		color: #fff;
+    }
+}
+
+
+
+

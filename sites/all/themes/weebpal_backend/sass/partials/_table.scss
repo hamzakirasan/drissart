@@ -1,0 +1,289 @@
+/* table */
+table {
+	border: 1px solid #e5e5e5;
+	background: #fff;
+	margin-bottom: 20px;
+	width: 100%;
+	&:empty {
+		display: none;
+	}
+	th {
+		border-bottom: none;
+		font-weight: 600;
+		vertical-align: top;
+	}
+	th, th.checkbox{
+		img{
+			vertical-align: middle;
+			margin-left: 5px;
+			max-width: 10px;
+			height: auto;
+			margin-top: -3px;
+		}
+	}
+	th, th.checkbox, td {
+		padding: 8px 15px;
+	}
+	th.checkbox, td {
+		vertical-align: middle;
+	}
+	td {
+		color: #333;
+		font-size: $fontsize-13;
+		a + a {
+			margin-left: 10px;
+		}
+	}
+	tr.even, tr.odd{
+		border-bottom-color: #e5e5e5;
+		background: #fff;
+	}
+	tr {
+		&:hover, &:focus{
+			background: #f9f9f9;
+		}
+	}
+	thead th {
+		padding: {
+			bottom: 20px;
+			top: 20px;
+		}
+		text-transform: uppercase;
+	}
+	.region-title td, .module {
+		background-color: $link-color;
+		color: #fff;
+	}
+	input[type="radio"], input[type="checkbox"]{
+		margin-top: 0;
+	}
+	.form-select{
+		padding: 3px;
+		height: 30px;
+	}
+	ul.inline, ul.links.inline{
+		margin-bottom: 0;
+		li a {
+			display: inline-block;
+			height: 24px;
+			overflow: hidden;
+			position: relative;
+			text-indent: -9999em;
+			width: 24px;
+			&:after {
+				color: #bdbdbd;
+				@include simpleline;
+				font-size: $fontsize-16;
+				left: 0;
+				height: 100%;
+				line-height: 1.6;
+				position: absolute;
+				text-align: center;
+				text-indent: 0;
+				top: 0;
+				width: 100%;
+			}
+		}
+		.edit a:after {
+			content: "\e05f";
+		}
+		.delete a:after {
+			content: "\e054";
+		}
+		.disable a:after {
+			content: "\e07c";
+		}
+		.clone a:after {
+			content: "\e040";
+		}
+		.export a:after {
+			content: "\e094";
+		}
+		.commerce-product-type-fields a:after {
+			content: "\e017";
+		}
+		.commerce-product-type-display a:after {
+			content: "\e05f";
+		}
+	}
+	&.sticky-header {
+		z-index: 1;
+	}
+}
+
+td.checkbox, th.checkbox {
+	display: table-cell;
+    margin: {
+		bottom: 0;
+		top: 0;
+	}
+    min-height: 0;
+    padding-left: 10px;
+}
+
+td.ctools-export-ui-operations .ctools-dropbutton {
+	right: 31px;
+}
+
+tr.odd, tr.even {
+	.form-item:not(.form-type-checkbox) {
+		margin: {
+			bottom: 1em;
+			top: 1em;
+		}
+	}
+	&.draggable {
+		.form-item {
+			margin: {
+				bottom: 0;
+				top: 0;
+			}
+		}
+		.field-formatter-settings-edit-form {
+			.form-item {
+				margin: 10px 0;
+			}
+		}
+	}
+}
+tr.rules-elements-add td {
+	padding: {
+		bottom: 8px;
+		top: 8px;
+	}
+}
+
+td.active {
+    background-color: #f9f9f9;
+}
+a.tabledrag-handle .handle {
+    background-position: 0 3px;
+    height: 15px;
+    margin: 0 0.5em;
+    padding: 0;
+    width: 15px;
+}
+
+#module-filter-tabs.bottom-fixed {
+    z-index: 1;
+}
+
+.ctools-button-processed .ctools-content ul {
+	margin: 0;
+    padding-left: 0;
+}
+
+// admin
+div.admin-panel {//.admin-list, 
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	border-radius: 3px;
+	margin-bottom: 15px;
+    padding: 15px;
+}
+
+div.admin {
+	font-size: $fontsize-13;
+	margin: {
+		left: -8px;
+		right: -8px;
+	}
+	padding-top: 0;
+	.left, .right {
+		margin: 0;
+		padding: {
+			left: 8px;
+			right: 8px;
+		}
+		width: 50%;
+	}
+	.compact-link {
+		padding: {
+			left: 10px;
+			right: 10px;
+		}
+	}
+}
+
+.compact-link, .tabledrag-toggle-weight-wrapper {
+	margin-bottom: 15px;
+	a {
+		@include button2;
+		min-width: 150px;
+	}
+}
+
+/*.compact-link {
+	padding: {
+		left: 8px;
+		right: 8px;
+	}
+}
+.tabledrag-toggle-weight-wrapper {
+	margin-top: 15px;
+}*/
+
+div.admin-panel {
+	> h3 {
+		border-bottom: 1px solid #e4e4e4;
+		font: {
+			size: $fontsize-14;
+			weight: 700;
+		}
+		margin: {
+			left: -15px;
+			right: -15px;
+		}
+		padding: 10px 15px 24px;
+		text-transform: uppercase;
+	}
+	.body {
+		padding: 0;
+		.admin-list {
+			background-color: transparent;
+			border: none;
+			border-radius: 0;
+			margin-bottom: 0;
+			padding: 0;
+		}
+	}
+}
+
+/* system-status-report */
+.system-status-report {
+	tr {
+		border-bottom: 1px solid #e5e5e5;
+	}
+}
+
+table.features td.sign {
+    font-size: inherit;
+}
+
+table.update {
+	tbody {
+		border-top: none;
+	}
+	tr td {
+		border-bottom: 1px dashed #e4e4e4;
+		border-top: 1px dashed #e4e4e4;
+	}
+}
+
+.token-tree {
+	font-size: $fontsize-14;
+	margin-left: 0;
+	td, th {
+		padding-bottom: 8px;
+		padding-top: 8px;
+	}
+}
+
+#user-admin-roles .form-item-name {
+    margin: 0 1em 0 0;
+}
+
+.rules-elements-table {
+	position: relative;
+}
+

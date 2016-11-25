@@ -19,3 +19,14 @@ function master_form_alter(&$form, &$form_state, $form_id) {
     unset($form['title']);
   }
 }
+
+/**
+ * Implements hook_insert().
+ */
+function master_node_insert($node) {
+    if ($node->type == 'artisan') {
+		$path['source'] = 'node/'.$node->nid.'/edit';
+		$path['alias'] = 'artisan/edit/'.$node->nid;
+		path_save($path);
+    }
+}

@@ -84,11 +84,9 @@
       <?php endif; ?>
 
       <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
           <?php if ($page['sidebar_first']): ?>
               <?php print render($page['sidebar_first']); ?>
           <?php endif; ?>
-        </div> <!-- /#name-and-slogan -->
       <?php endif; ?>
 
       <?php print render($page['header']); ?>
@@ -122,12 +120,6 @@
         <?php print render($page['content']); ?>
         <?php print $feed_icons; ?>
       </div></div> <!-- /.section, /#content -->
-
-      <?php if ($page['sidebar_first']): ?>
-        <div id="sidebar-first" class="column sidebar"><div class="section">
-          <?php print render($page['sidebar_first']); ?>
-        </div></div> <!-- /.section, /#sidebar-first -->
-      <?php endif; ?>
 
       <?php if ($page['sidebar_second']): ?>
         <div id="sidebar-second" class="column sidebar"><div class="section">

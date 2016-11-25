@@ -28,12 +28,17 @@ function render_term($node, $type='node',$field)
 
     }
 
-function rt($tid) {
-	if (!empty($tid)) {
-		$term =  taxonomy_term_load($tid);
+function rt($tidArr) {
+	$count = count($tidArr);
+	if ($count > 0) {
+			$names = "";
+			foreach ($tidArr as $k => $v) {
+				if ($k!=0) $names.=', ';
+				$term = taxonomy_term_load($v['tid']);
+				$names.=$term->name;
+			}
+			return $names;
 	}
-
-	return $term->name;
 }
 
 function rv($var)

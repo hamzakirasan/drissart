@@ -10146,7 +10146,7 @@ input#edit-clear, #field-ui-field-delete-form #edit-actions, .confirmation #edit
 .page-admin:not(.navbar-administration) #header, .one-sidebar #header, .weebpal-backend-activated #header {
   position: fixed;
   z-index: 10;
-  width: 270px;
+  width: 175px;
   background: #375d7c;
   color: rgba(255, 255, 255, 0.5);
   height: 100%;
@@ -10986,7 +10986,7 @@ div.messages {
 
 /* line 133, ../sass/partials/_common.scss */
 .page-admin:not(.navbar-administration) #page-wrapper > #page, .one-sidebar #page-wrapper > #page, .weebpal-backend-activated #page-wrapper > #page {
-  margin-left: 285px;
+  margin-left: 188px;
   padding-right: 15px;
 }
 /* line 137, ../sass/partials/_common.scss */

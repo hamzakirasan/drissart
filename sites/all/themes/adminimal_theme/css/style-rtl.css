@@ -239,3 +239,8 @@ div.add-or-remove-shortcuts {
 #user-login-form .openid-links .user-link {
   margin-right: 1.5em;
 }
+
+
+.node-type-artisan fieldset{
+  padding: 20px;
+}

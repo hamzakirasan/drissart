@@ -1,4 +1,5 @@
 <?php
+
 	module_load_include('inc', 'master', 'includes/alters');
 	module_load_include('inc', 'master', 'includes/form');
 	module_load_include('inc', 'master', 'includes/theme');

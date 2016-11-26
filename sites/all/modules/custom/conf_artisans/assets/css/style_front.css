@@ -1,0 +1,13 @@
+#block-user-login{
+    max-width: 400px;
+    margin : 0 auto;
+}
+#block-user-login .form-item {
+    overflow: hidden;
+}
+#block-user-login label{
+   float:left;
+}
+#block-user-login input{
+    float:right;
+}

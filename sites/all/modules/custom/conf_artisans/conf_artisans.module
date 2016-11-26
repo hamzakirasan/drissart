@@ -1,0 +1,15 @@
+<?php
+
+// All custome menus declarations
+module_load_include('inc', 'conf_artisans', 'includes/menus');
+module_load_include('inc', 'conf_artisans', 'includes/alters');
+module_load_include('inc', 'conf_artisans', 'includes/forms');
+module_load_include('inc', 'conf_artisans', 'includes/tools');
+// Templates definitions
+module_load_include('inc', 'conf_artisans', 'includes/theme');
+
+// All custom blocks
+module_load_include('inc', 'conf_artisans', 'includes/blocks');
+
+// All custom admins
+//module_load_include('inc', 'conf_artisans', 'includes/admin');

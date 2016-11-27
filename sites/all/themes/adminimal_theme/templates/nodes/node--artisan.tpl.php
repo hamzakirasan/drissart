@@ -5,19 +5,19 @@
 
 		<fieldset>
 		<legend> <?php print t('Artisan'); ?> </legend>
+		
 		<?php print render_value($node,'node','field_artisan_cin'); ?>
-
+		
 		<?php print render_value($node,'node','field_artisan_firstname_ar'); ?>
-
+		
 		<?php print render_value($node,'node','field_artisan_lastname_ar'); ?>
-
+		
 		<?php print render_value($node,'node','field_artisan_lastname_fr'); ?>
-
+		
 		<?php print render_value($node,'node','field_artisan_firstname_fr'); ?>
-
+		
 		<?php print render_value($node,'node','field_artisan_birthplace'); ?>
-
-
+		
 		<?php if (!empty($node->field_artisan_birth_date['und'])): ?>
 				<?php print '<b>'.t('Birth date').' </b>: '.date('d-m-Y',strtotime($node->field_artisan_birth_date['und'][0]['value'])) ; ?>
 		<?php endif ?>

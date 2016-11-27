@@ -1,10 +1,8 @@
 
-<style type="text/css">
-		.artisan-infos {padding: 5px;width: 450px;}
-		legend {position: relative;top : -30px;left: -80px;padding: 5px;}
-		h1 {margin-bottom: 60px;}
-</style>
-<fieldset class="artisan-infos-content" >
+
+
+<div style="text-align:center"> <h1> <?php print t('Artisan'); ?>  </h1> </div>
+<div class="artisan-infos-content" >
 	<?php if (!empty($node->field_artisan_cin['und'])): ?>
 		<div class="artisan-infos" align="right">
 			<?php print  t('CIN').' : '.$node->field_artisan_cin['und'][0]['value']; ?>
@@ -100,115 +98,4 @@
 			<?php print t('Type of activity').' : '.rt($node->field_artisan_type_activity['und']); ?>
 		</div>
 	<?php endif ?>
-			<?php if (!empty($node->field_artisan_handicraft_items['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Handicraft items').' : '.rt($node->field_artisan_handicraft_items['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_domain['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Domain').' : '.rt($node->field_artisan_domain['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_profession['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Profession').' : '.rt($node->field_artisan_profession['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_description['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Description').' : '.$node->field_artisan_description['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_commercial_record['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Commercial record').' : '.$node->field_artisan_commercial_record['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_commercial_name['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Commercial name').' : '.$node->field_artisan_commercial_name['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_professionnel_rasm['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Professionnel rasm').' : '.$node->field_artisan_professionnel_rasm['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_license_profession['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('License to practice the profession').' : '.rt($node->field_artisan_license_profession['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_workplace_address['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Workplace address').' : '.$node->field_artisan_workplace_address['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_workplace_address_fr['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Workplace Address in french').' : '.$node->field_workplace_address_fr['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_sector['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Sector').' : '.rt($node->field_artisan_sector['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_code_postal_2['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Workplace Address in french').' : '.$node->field_artisan_code_postal_2['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_professional_phone['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Professional phone').' : '.$node->field_artisan_professional_phone['und'][0]['value']; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_fax['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Fax').' : '.$node->field_artisan_fax['und'][0]['value']; ?>
-		</div>	
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_activity_place['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Activity place').' : '.rt($node->field_artisan_activity_place['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_creation_date['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Creation date').' : '.date('d-m-Y',strtotime($node->field_artisan_creation_date['und'][0]['value'])) ; ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_total_area_ws['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Total area of the workshop').' : '.$node->field_artisan_total_area_ws['und'][0]['value']; ?>
-		</div>	
-	<?php endif ?>
-	<?php if (!empty($node->field_artisa_type_workshop_use['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Type of workshop use').' : '.rt($node->field_artisa_type_workshop_use['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_equipments['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Equipments').' : '.rt($node->field_artisan_equipments['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_techniques['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Techniques').' : '.rt($node->field_artisan_techniques['und']); ?>
-		</div>
-	<?php endif ?>
-	<?php if (!empty($node->field_artisan_participation_ex['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Participation in exhibitions').' : '.rt($node->field_artisan_participation_ex['und']); ?>
-		</div>
-	<?php endif ?>
-
-	<?php if (!empty($node->field_artisan_promotion['und'])): ?>
-		<div class="artisan-infos" align="right">
-			<?php print t('Promotion').' : '.rt($node->field_artisan_promotion['und']); ?>
-		</div>
-	<?php endif ?>
-</fieldset>
+</div>

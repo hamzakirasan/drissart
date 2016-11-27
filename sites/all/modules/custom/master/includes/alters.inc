@@ -24,16 +24,20 @@ function master_menu_alter(&$items){
 function master_form_alter(&$form, &$form_state, $form_id) {
  if($form_id == 'artisan_node_form') {
     unset($form['title']);
+  	$form['actions']['submit']['#validate'][] = 'artisan_node_form_validate';
   }
   elseif($form_id == 'enterprise_node_form') {
     unset($form['title']);
     $p = drupal_get_query_parameters();
-
     if (!empty($p['tid']) && intval($p['tid']) != 0 ) {	
     	if ($p['tid'] == 9) {
     		unset($form['field_artisan_license_number']);
     		unset($form['field_artisan_the_licensed']);
     	}
+    }
+
+    if (!empty($p['rasm'])) {
+    	$form['field_artisan_professionnel_rasm']["und"][0]['value']['#default_value'] = $p['rasm'];
     }
 
     if (!empty($p['id']) && intval($p['id']) != 0 ) {	
@@ -43,6 +47,11 @@ function master_form_alter(&$form, &$form_state, $form_id) {
 	    	);
     }
   }
+}
+
+
+function artisan_node_form_validate(&$form, &$form_state) {
+
 }
 
 /**
@@ -61,8 +70,20 @@ function master_node_insert($node) {
 		if (!empty($node->field_artisan_type_activity['und'][0]['tid'])) {
 		 	$query['tid'] = $node->field_artisan_type_activity['und'][0]['tid'];
 		}
-		 
-		drupal_goto('node/add/enterprise',array('query'=> $query));
+
+		if (!empty($node->field_artisan_professionnel_rasm['und'][0]['value'])) {
+			$query['rasm'] = $node->field_artisan_professionnel_rasm['und'][0]['value'];
+			$enterprise_nid = get_enterprise_nid($node->field_artisan_professionnel_rasm['und'][0]['value']);
+
+
+		}
+		
+		if (!empty($enterprise_nid)) {
+			drupal_goto('node/'.$enterprise_nid.'/edit',array('query'=> $query));
+		} else{
+			drupal_goto('node/add/enterprise',array('query'=> $query));
+		}
+
     }
     elseif ($node->type == 'enterprise') {
 		$path['source'] = 'node/'.$node->nid.'/edit';

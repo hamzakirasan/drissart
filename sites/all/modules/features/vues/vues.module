@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Vues feature.
+ */
+
+include_once 'vues.features.inc';

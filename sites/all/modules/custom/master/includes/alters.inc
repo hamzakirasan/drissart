@@ -103,7 +103,7 @@ function master_node_presave($node) {
     	}
     }
 
-    if ($node->type == 'enterprise') {
+    if ($node->type == 'artisan') {
     	$title = '';
     	if (!empty($node->field_artisan_firstname_fr['und'][0]['value'])) {
 	    	$title .= $node->field_artisan_firstname_fr['und'][0]['value'].' ';

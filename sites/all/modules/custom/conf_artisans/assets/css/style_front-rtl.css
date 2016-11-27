@@ -1,3 +1,15 @@
+#block-system-main{
+    clear: inherit !important;
+    float: right;
+    width: 80%;
+}
+#block-conf-artisans-conf-artisans-header h2{
+    text-align: center;
+    border: 2px solid gray;
+    border-left:0;
+    border-right:0;
+    padding: 10px 0 10px 0;
+}
 #block-user-login{
     max-width: 400px;
     margin : 0 auto;
@@ -11,3 +23,27 @@
 #block-user-login input{
     float:left;
 }
+#block-menu-block-1{
+    float:right;
+    width: 20%;
+}
+
+.field-widget-text-textfield, .field-widget-options-select, .field-widget-email-textfield, .field-widget-options-select {
+    width: 50%;
+    float:right;
+}
+.field-widget-text-textfield label, .field-widget-options-select label, .field-widget-email-textfield  label, .field-widget-options-select label{
+    float:right;
+}
+.field-widget-text-textfield input, .field-widget-options-select .form-select, .field-widget-options-select .form-select, .field-widget-email-textfield input{
+    float:left;
+    margin-right: 10px;
+    width:50%
+}
+.field-name-field-artisan-birth-date, .form-actions, .field-widget-text-textarea{
+    clear: right;
+}
+#content-after{
+    text-align: center;
+}
+#edit-preview{display:none;}

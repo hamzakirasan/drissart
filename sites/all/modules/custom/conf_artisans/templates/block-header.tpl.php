@@ -6,12 +6,13 @@
               print check_markup($body, 'full_html', '', FALSE);
           }
       ?>
-      <h2><?php
+      <h2>
+       <?php
         if (drupal_is_front_page()):
           print t('Home page');
         else:
-            print drupal_set_title();
-        endif;?></h2>
+            print drupal_get_title();
+        endif;?>
     </div>
   </div>
 </div>

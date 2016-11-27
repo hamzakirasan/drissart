@@ -13,12 +13,20 @@ function conf_artisans_menu()
     'page arguments' => array('check_user'),
     'access arguments' => array('registre des artisans'),
     'expanded' => true,
-    'type' => MENU_NORMAL_ITEM,
+    'access callback' => TRUE,
    );
     $items['add/artisans/%'] = array(
 	'title' => t('Add artisans'),
 	'page callback' => 'add_artisans',
 	'page arguments'   => array(2),
+        'access arguments' => array('registre des artisans'),
+	'access callback' => TRUE,
+    );
+    $items['edit/artisans/%'] = array(
+	'title' => t('Edit artisans'),
+	'page callback' => 'edit_artisans',
+	'page arguments'   => array(2),
+        'access arguments' => array('registre des artisans'),
 	'access callback' => TRUE,
     );
   return $items;
@@ -37,6 +45,17 @@ function conf_artisans_permission() {
 }
 
 function add_artisans($cin) {
-  $cin = '123';
-  return theme('add_artisans', array('cin' => $cin));
+    $content_type = 'artisan';
+    module_load_include('inc', 'node', 'node.pages');
+    $form = node_add($content_type);
+    return theme('add_artisans', array('form' => $form));
+    
+}
+
+function edit_artisans($nid) {
+    $node= node_load($nid);
+    require_once(drupal_get_path('module', 'node') . '/node.pages.inc');     
+    $form = node_page_edit($node);   
+    
+    return theme('add_artisans', array('form' => $form));
 }

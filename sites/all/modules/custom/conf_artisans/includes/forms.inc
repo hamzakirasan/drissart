@@ -35,9 +35,11 @@
     if(isset($data) && !empty($data)){
         $artisan = _get_artisants($data['cin']);
         if(!empty($artisan)){
-            die('NOT EMPTY');
+            $link = 'edit/artisans/'. $artisan->nid;
+            drupal_goto($link);
         }else{
-            die('EMPTY');
+            $link = 'add/artisans/'. $data['cin'];
+            drupal_goto($link);
         }
     }
   }

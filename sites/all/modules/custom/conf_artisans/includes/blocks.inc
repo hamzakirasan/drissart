@@ -11,6 +11,12 @@ function conf_artisans_block_info() {
     'region' => '-1',
     'cache' => DRUPAL_NO_CACHE
   );
+  $blocks['conf_artisans_bottom'] = array(
+    'info' => t('Footer'),
+    'status' => 1,
+    'region' => '-1',
+    'cache' => DRUPAL_NO_CACHE
+  );
   return $blocks;
 }
 
@@ -23,6 +29,9 @@ function conf_artisans_block_view($delta = '') {
   switch ($delta) {
     case 'conf_artisans_header':
       $block['content'] = _conf_artisans_block_header();
+      break;
+    case 'conf_artisans_bottom':
+      $block['content'] = _conf_artisans_block_footer();
       break;
   }
   return $block;
@@ -73,4 +82,11 @@ function _conf_artisans_block_header()
 
   // Block output in HTML with div wrapper
   return theme('block_header', array('body' => $text));
+}
+/**
+ * Implement function contact_title_content
+ */
+function _conf_artisans_block_footer()
+{
+    
 }

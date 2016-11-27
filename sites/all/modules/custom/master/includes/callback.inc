@@ -2,7 +2,7 @@
 
 function pdf_artisan() {
     global $user;
-    $html2pdf =  variable_get('html2pdf');
+    $html2pdf =  getcwd().'/sites/all/libraries/html2pdf/';
     require_once($html2pdf . '/html2pdf.class.php');
 
     $args = arg();

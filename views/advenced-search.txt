@@ -1,0 +1,717 @@
+$view = new view();
+$view->name = 'artisan_recherche_avancee';
+$view->description = '';
+$view->tag = 'default';
+$view->base_table = 'node';
+$view->human_name = 'Artisan - recherche avancée';
+$view->core = 7;
+$view->api_version = '3.0';
+$view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+/* Display: Master */
+$handler = $view->new_display('default', 'Master', 'default');
+$handler->display->display_options['title'] = 'شركة';
+$handler->display->display_options['use_ajax'] = TRUE;
+$handler->display->display_options['use_more_always'] = FALSE;
+$handler->display->display_options['access']['type'] = 'role';
+$handler->display->display_options['access']['role'] = array(
+  3 => '3',
+  2 => '2',
+);
+$handler->display->display_options['cache']['type'] = 'none';
+$handler->display->display_options['query']['type'] = 'views_query';
+$handler->display->display_options['exposed_form']['type'] = 'basic';
+$handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
+$handler->display->display_options['pager']['type'] = 'full';
+$handler->display->display_options['pager']['options']['items_per_page'] = '25';
+$handler->display->display_options['style_plugin'] = 'table';
+$handler->display->display_options['style_options']['columns'] = array(
+  'field_artisan_commercial_name' => 'field_artisan_commercial_name',
+  'field_artisan_firstname_ar' => 'field_artisan_firstname_ar',
+  'field_artisan_lastname_ar' => 'field_artisan_lastname_ar',
+  'field_artisan_birth_date' => 'field_artisan_birth_date',
+  'field_artisan_address' => 'field_artisan_address',
+  'field_artisan_email_address' => 'field_artisan_email_address',
+  'nid' => 'nid',
+  'view_node' => 'view_node',
+  'edit_node' => 'edit_node',
+  'delete_node' => 'delete_node',
+);
+$handler->display->display_options['style_options']['default'] = '-1';
+$handler->display->display_options['style_options']['info'] = array(
+  'field_artisan_commercial_name' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_artisan_firstname_ar' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_artisan_lastname_ar' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_artisan_birth_date' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_artisan_address' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'field_artisan_email_address' => array(
+    'sortable' => 1,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'nid' => array(
+    'sortable' => 0,
+    'default_sort_order' => 'asc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'view_node' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'edit_node' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+  'delete_node' => array(
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  ),
+);
+/* No results behavior: Global: Text area */
+$handler->display->display_options['empty']['area']['id'] = 'area';
+$handler->display->display_options['empty']['area']['table'] = 'views';
+$handler->display->display_options['empty']['area']['field'] = 'area';
+$handler->display->display_options['empty']['area']['empty'] = TRUE;
+$handler->display->display_options['empty']['area']['content'] = 'No result fond.';
+$handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+/* Relationship: Content: Artisans (field_artisans) */
+$handler->display->display_options['relationships']['field_artisans_nid']['id'] = 'field_artisans_nid';
+$handler->display->display_options['relationships']['field_artisans_nid']['table'] = 'field_data_field_artisans';
+$handler->display->display_options['relationships']['field_artisans_nid']['field'] = 'field_artisans_nid';
+$handler->display->display_options['relationships']['field_artisans_nid']['delta'] = '-1';
+/* Field: Content: Commercial name */
+$handler->display->display_options['fields']['field_artisan_commercial_name']['id'] = 'field_artisan_commercial_name';
+$handler->display->display_options['fields']['field_artisan_commercial_name']['table'] = 'field_data_field_artisan_commercial_name';
+$handler->display->display_options['fields']['field_artisan_commercial_name']['field'] = 'field_artisan_commercial_name';
+$handler->display->display_options['fields']['field_artisan_commercial_name']['relationship'] = 'field_artisans_nid';
+/* Field: Content: First name */
+$handler->display->display_options['fields']['field_artisan_firstname_ar']['id'] = 'field_artisan_firstname_ar';
+$handler->display->display_options['fields']['field_artisan_firstname_ar']['table'] = 'field_data_field_artisan_firstname_ar';
+$handler->display->display_options['fields']['field_artisan_firstname_ar']['field'] = 'field_artisan_firstname_ar';
+/* Field: Content: Last name */
+$handler->display->display_options['fields']['field_artisan_lastname_ar']['id'] = 'field_artisan_lastname_ar';
+$handler->display->display_options['fields']['field_artisan_lastname_ar']['table'] = 'field_data_field_artisan_lastname_ar';
+$handler->display->display_options['fields']['field_artisan_lastname_ar']['field'] = 'field_artisan_lastname_ar';
+/* Field: Content: Birth date */
+$handler->display->display_options['fields']['field_artisan_birth_date']['id'] = 'field_artisan_birth_date';
+$handler->display->display_options['fields']['field_artisan_birth_date']['table'] = 'field_data_field_artisan_birth_date';
+$handler->display->display_options['fields']['field_artisan_birth_date']['field'] = 'field_artisan_birth_date';
+$handler->display->display_options['fields']['field_artisan_birth_date']['settings'] = array(
+  'format_type' => 'short',
+  'fromto' => 'both',
+  'multiple_number' => '',
+  'multiple_from' => '',
+  'multiple_to' => '',
+  'show_remaining_days' => 0,
+);
+/* Field: Content: Address */
+$handler->display->display_options['fields']['field_artisan_address']['id'] = 'field_artisan_address';
+$handler->display->display_options['fields']['field_artisan_address']['table'] = 'field_data_field_artisan_address';
+$handler->display->display_options['fields']['field_artisan_address']['field'] = 'field_artisan_address';
+/* Field: Content: Email Address */
+$handler->display->display_options['fields']['field_artisan_email_address']['id'] = 'field_artisan_email_address';
+$handler->display->display_options['fields']['field_artisan_email_address']['table'] = 'field_data_field_artisan_email_address';
+$handler->display->display_options['fields']['field_artisan_email_address']['field'] = 'field_artisan_email_address';
+$handler->display->display_options['fields']['field_artisan_email_address']['type'] = 'email_plain';
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['label'] = 'Imprimer';
+$handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+$handler->display->display_options['fields']['nid']['alter']['text'] = 'Imprimer';
+$handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['nid']['alter']['path'] = 'admin/artisan/pdf/[nid]';
+/* Field: Content: Link */
+$handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+$handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+$handler->display->display_options['fields']['view_node']['label'] = 'View';
+/* Field: Content: Edit link */
+$handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+$handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+$handler->display->display_options['fields']['edit_node']['alter']['text'] = 'artisan/edit/[nid]';
+/* Field: Content: Delete link */
+$handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+$handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+$handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+$handler->display->display_options['fields']['delete_node']['label'] = 'Delete';
+/* Sort criterion: Content: Post date */
+$handler->display->display_options['sorts']['created']['id'] = 'created';
+$handler->display->display_options['sorts']['created']['table'] = 'node';
+$handler->display->display_options['sorts']['created']['field'] = 'created';
+$handler->display->display_options['sorts']['created']['order'] = 'DESC';
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'artisan' => 'artisan',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Birth date (field_artisan_birth_date) */
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['id'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['table'] = 'field_data_field_artisan_birth_date';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['field'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['operator'] = '>=';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['operator_id'] = 'field_artisan_birth_date_value_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['label'] = 'Birthdate from ';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['operator'] = 'field_artisan_birth_date_value_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['identifier'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Content: Birth date (field_artisan_birth_date) */
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['id'] = 'field_artisan_birth_date_value_1';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['table'] = 'field_data_field_artisan_birth_date';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['field'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['operator'] = '<=';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['operator_id'] = 'field_artisan_birth_date_value_1_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['label'] = 'to';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['operator'] = 'field_artisan_birth_date_value_1_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['identifier'] = 'field_artisan_birth_date_value_1';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Content: Sexe (field_artisan_sexe) */
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['id'] = 'field_artisan_sexe_tid';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['table'] = 'field_data_field_artisan_sexe';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['field'] = 'field_artisan_sexe_tid';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['operator_id'] = 'field_artisan_sexe_tid_op';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['label'] = 'Sexe';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['operator'] = 'field_artisan_sexe_tid_op';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['identifier'] = 'field_artisan_sexe_tid';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['vocabulary'] = 'sexe';
+/* Filter criterion: Content: School level (field_artisan_school_level) */
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['id'] = 'field_artisan_school_level_tid';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['table'] = 'field_data_field_artisan_school_level';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['field'] = 'field_artisan_school_level_tid';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['operator_id'] = 'field_artisan_school_level_tid_op';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['label'] = 'School level';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['operator'] = 'field_artisan_school_level_tid_op';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['identifier'] = 'field_artisan_school_level_tid';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['vocabulary'] = 'school_level';
+/* Filter criterion: Content: Family situation (field_artisan_family_situation) */
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['id'] = 'field_artisan_family_situation_tid';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['table'] = 'field_data_field_artisan_family_situation';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['field'] = 'field_artisan_family_situation_tid';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['operator_id'] = 'field_artisan_family_situation_tid_op';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['label'] = 'Family situation';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['operator'] = 'field_artisan_family_situation_tid_op';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['identifier'] = 'field_artisan_family_situation_tid';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['vocabulary'] = 'family_situation';
+/* Filter criterion: Content: Engage in social insurance (field_artisan_social_insurance) */
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['id'] = 'field_artisan_social_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['table'] = 'field_data_field_artisan_social_insurance';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['field'] = 'field_artisan_social_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['operator_id'] = 'field_artisan_social_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['label'] = 'Engage in social insurance';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['operator'] = 'field_artisan_social_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['identifier'] = 'field_artisan_social_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['vocabulary'] = 'engage_in_social_insurance';
+/* Filter criterion: Content: Professional qualification (field_artisan_p_qualification) */
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['id'] = 'field_artisan_p_qualification_tid';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['table'] = 'field_data_field_artisan_p_qualification';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['field'] = 'field_artisan_p_qualification_tid';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['operator_id'] = 'field_artisan_p_qualification_tid_op';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['label'] = 'Professional qualification';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['operator'] = 'field_artisan_p_qualification_tid_op';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['identifier'] = 'field_artisan_p_qualification_tid';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['vocabulary'] = 'professional_qualification';
+/* Filter criterion: Content: Professional insurance (field_artisan_pro_insurance) */
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['id'] = 'field_artisan_pro_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['table'] = 'field_data_field_artisan_pro_insurance';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['field'] = 'field_artisan_pro_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['operator_id'] = 'field_artisan_pro_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['label'] = 'Professional insurance';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['operator'] = 'field_artisan_pro_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['identifier'] = 'field_artisan_pro_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['vocabulary'] = 'professional_insurance';
+
+/* Display: advanced_search */
+$handler = $view->new_display('page', 'advanced_search', 'page');
+$handler->display->display_options['defaults']['title'] = FALSE;
+$handler->display->display_options['title'] = 'Advanced search';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'artisan' => 'artisan',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Birth date (field_artisan_birth_date) */
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['id'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['table'] = 'field_data_field_artisan_birth_date';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['field'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['operator'] = '>=';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['operator_id'] = 'field_artisan_birth_date_value_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['label'] = 'Birthdate berween ';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['operator'] = 'field_artisan_birth_date_value_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['identifier'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Content: Birth date (field_artisan_birth_date) */
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['id'] = 'field_artisan_birth_date_value_1';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['table'] = 'field_data_field_artisan_birth_date';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['field'] = 'field_artisan_birth_date_value';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['operator'] = '<=';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['operator_id'] = 'field_artisan_birth_date_value_1_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['label'] = 'And';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['operator'] = 'field_artisan_birth_date_value_1_op';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['identifier'] = 'field_artisan_birth_date_value_1';
+$handler->display->display_options['filters']['field_artisan_birth_date_value_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Content: Sexe (field_artisan_sexe) */
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['id'] = 'field_artisan_sexe_tid';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['table'] = 'field_data_field_artisan_sexe';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['field'] = 'field_artisan_sexe_tid';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['operator_id'] = 'field_artisan_sexe_tid_op';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['label'] = 'Sexe';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['operator'] = 'field_artisan_sexe_tid_op';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['identifier'] = 'field_artisan_sexe_tid';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_sexe_tid']['vocabulary'] = 'sexe';
+/* Filter criterion: Content: School level (field_artisan_school_level) */
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['id'] = 'field_artisan_school_level_tid';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['table'] = 'field_data_field_artisan_school_level';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['field'] = 'field_artisan_school_level_tid';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['operator_id'] = 'field_artisan_school_level_tid_op';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['label'] = 'School level';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['operator'] = 'field_artisan_school_level_tid_op';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['identifier'] = 'field_artisan_school_level_tid';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_school_level_tid']['vocabulary'] = 'school_level';
+/* Filter criterion: Content: Family situation (field_artisan_family_situation) */
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['id'] = 'field_artisan_family_situation_tid';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['table'] = 'field_data_field_artisan_family_situation';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['field'] = 'field_artisan_family_situation_tid';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['operator_id'] = 'field_artisan_family_situation_tid_op';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['label'] = 'Family situation';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['operator'] = 'field_artisan_family_situation_tid_op';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['identifier'] = 'field_artisan_family_situation_tid';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_family_situation_tid']['vocabulary'] = 'family_situation';
+/* Filter criterion: Content: Engage in social insurance (field_artisan_social_insurance) */
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['id'] = 'field_artisan_social_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['table'] = 'field_data_field_artisan_social_insurance';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['field'] = 'field_artisan_social_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['operator_id'] = 'field_artisan_social_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['label'] = 'Engage in social insurance';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['operator'] = 'field_artisan_social_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['identifier'] = 'field_artisan_social_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_social_insurance_tid']['vocabulary'] = 'engage_in_social_insurance';
+/* Filter criterion: Content: Professional qualification (field_artisan_p_qualification) */
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['id'] = 'field_artisan_p_qualification_tid';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['table'] = 'field_data_field_artisan_p_qualification';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['field'] = 'field_artisan_p_qualification_tid';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['operator_id'] = 'field_artisan_p_qualification_tid_op';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['label'] = 'Professional qualification';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['operator'] = 'field_artisan_p_qualification_tid_op';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['identifier'] = 'field_artisan_p_qualification_tid';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_p_qualification_tid']['vocabulary'] = 'professional_qualification';
+/* Filter criterion: Content: Professional insurance (field_artisan_pro_insurance) */
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['id'] = 'field_artisan_pro_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['table'] = 'field_data_field_artisan_pro_insurance';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['field'] = 'field_artisan_pro_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['operator_id'] = 'field_artisan_pro_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['label'] = 'Professional insurance';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['operator'] = 'field_artisan_pro_insurance_tid_op';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['identifier'] = 'field_artisan_pro_insurance_tid';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_pro_insurance_tid']['vocabulary'] = 'professional_insurance';
+/* Filter criterion: Content: Type of activity (field_artisan_type_activity) */
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['id'] = 'field_artisan_type_activity_tid';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['table'] = 'field_data_field_artisan_type_activity';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['field'] = 'field_artisan_type_activity_tid';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['expose']['operator_id'] = 'field_artisan_type_activity_tid_op';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['expose']['label'] = 'Type of activity';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['expose']['operator'] = 'field_artisan_type_activity_tid_op';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['expose']['identifier'] = 'field_artisan_type_activity_tid';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_type_activity_tid']['vocabulary'] = 'type_of_activity';
+/* Filter criterion: Content: Creation date (field_artisan_creation_date) */
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['id'] = 'field_artisan_creation_date_value';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['table'] = 'field_data_field_artisan_creation_date';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['field'] = 'field_artisan_creation_date_value';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['operator'] = '>=';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['expose']['operator_id'] = 'field_artisan_creation_date_value_op';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['expose']['label'] = 'Creation date between';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['expose']['operator'] = 'field_artisan_creation_date_value_op';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['expose']['identifier'] = 'field_artisan_creation_date_value';
+$handler->display->display_options['filters']['field_artisan_creation_date_value']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Content: Creation date (field_artisan_creation_date) */
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['id'] = 'field_artisan_creation_date_value_1';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['table'] = 'field_data_field_artisan_creation_date';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['field'] = 'field_artisan_creation_date_value';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['operator'] = '<=';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['expose']['operator_id'] = 'field_artisan_creation_date_value_1_op';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['expose']['label'] = 'And';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['expose']['operator'] = 'field_artisan_creation_date_value_1_op';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['expose']['identifier'] = 'field_artisan_creation_date_value_1';
+$handler->display->display_options['filters']['field_artisan_creation_date_value_1']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+/* Filter criterion: Content: Sector (field_artisan_sector) */
+$handler->display->display_options['filters']['field_artisan_sector_tid']['id'] = 'field_artisan_sector_tid';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['table'] = 'field_data_field_artisan_sector';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['field'] = 'field_artisan_sector_tid';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_sector_tid']['expose']['operator_id'] = 'field_artisan_sector_tid_op';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['expose']['label'] = 'Sector';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['expose']['operator'] = 'field_artisan_sector_tid_op';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['expose']['identifier'] = 'field_artisan_sector_tid';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_sector_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_sector_tid']['vocabulary'] = 'sector';
+/* Filter criterion: Content: Domain (field_artisan_domain) */
+$handler->display->display_options['filters']['field_artisan_domain_tid']['id'] = 'field_artisan_domain_tid';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['table'] = 'field_data_field_artisan_domain';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['field'] = 'field_artisan_domain_tid';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_domain_tid']['expose']['operator_id'] = 'field_artisan_domain_tid_op';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['expose']['label'] = 'Domain';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['expose']['operator'] = 'field_artisan_domain_tid_op';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['expose']['identifier'] = 'field_artisan_domain_tid';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_domain_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_domain_tid']['vocabulary'] = 'domain';
+/* Filter criterion: Content: Profession (field_artisan_profession) */
+$handler->display->display_options['filters']['field_artisan_profession_tid']['id'] = 'field_artisan_profession_tid';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['table'] = 'field_data_field_artisan_profession';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['field'] = 'field_artisan_profession_tid';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_profession_tid']['expose']['operator_id'] = 'field_artisan_profession_tid_op';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['expose']['label'] = 'Profession';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['expose']['operator'] = 'field_artisan_profession_tid_op';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['expose']['identifier'] = 'field_artisan_profession_tid';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_profession_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_profession_tid']['vocabulary'] = 'profession';
+/* Filter criterion: Content: Activity place (field_artisan_activity_place) */
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['id'] = 'field_artisan_activity_place_tid';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['table'] = 'field_data_field_artisan_activity_place';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['field'] = 'field_artisan_activity_place_tid';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['expose']['operator_id'] = 'field_artisan_activity_place_tid_op';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['expose']['label'] = 'Activity place';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['expose']['operator'] = 'field_artisan_activity_place_tid_op';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['expose']['identifier'] = 'field_artisan_activity_place_tid';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_activity_place_tid']['vocabulary'] = 'activity_place';
+/* Filter criterion: Content: Type of workshop use (field_artisa_type_workshop_use) */
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['id'] = 'field_artisa_type_workshop_use_tid';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['table'] = 'field_data_field_artisa_type_workshop_use';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['field'] = 'field_artisa_type_workshop_use_tid';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['expose']['operator_id'] = 'field_artisa_type_workshop_use_tid_op';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['expose']['label'] = 'Type of workshop use';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['expose']['operator'] = 'field_artisa_type_workshop_use_tid_op';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['expose']['identifier'] = 'field_artisa_type_workshop_use_tid';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisa_type_workshop_use_tid']['vocabulary'] = 'type_of_workshop_use';
+/* Filter criterion: Content: Equipments (field_artisan_equipments) */
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['id'] = 'field_artisan_equipments_tid';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['table'] = 'field_data_field_artisan_equipments';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['field'] = 'field_artisan_equipments_tid';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['expose']['operator_id'] = 'field_artisan_equipments_tid_op';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['expose']['label'] = 'Equipments';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['expose']['operator'] = 'field_artisan_equipments_tid_op';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['expose']['identifier'] = 'field_artisan_equipments_tid';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_equipments_tid']['vocabulary'] = 'equipment';
+/* Filter criterion: Content: Techniques (field_artisan_techniques) */
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['id'] = 'field_artisan_techniques_tid';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['table'] = 'field_data_field_artisan_techniques';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['field'] = 'field_artisan_techniques_tid';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['expose']['operator_id'] = 'field_artisan_techniques_tid_op';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['expose']['label'] = 'Techniques';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['expose']['operator'] = 'field_artisan_techniques_tid_op';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['expose']['identifier'] = 'field_artisan_techniques_tid';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_techniques_tid']['vocabulary'] = 'technique';
+/* Filter criterion: Content: Promotion (field_artisan_promotion) */
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['id'] = 'field_artisan_promotion_tid';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['table'] = 'field_data_field_artisan_promotion';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['field'] = 'field_artisan_promotion_tid';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['expose']['operator_id'] = 'field_artisan_promotion_tid_op';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['expose']['label'] = 'Promotion';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['expose']['operator'] = 'field_artisan_promotion_tid_op';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['expose']['identifier'] = 'field_artisan_promotion_tid';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_promotion_tid']['vocabulary'] = 'promotion';
+/* Filter criterion: Content: Participation in exhibitions (field_artisan_participation_ex) */
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['id'] = 'field_artisan_participation_ex_tid';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['table'] = 'field_data_field_artisan_participation_ex';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['field'] = 'field_artisan_participation_ex_tid';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['relationship'] = 'field_artisans_nid';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['exposed'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['expose']['operator_id'] = 'field_artisan_participation_ex_tid_op';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['expose']['label'] = 'Participation in exhibitions';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['expose']['operator'] = 'field_artisan_participation_ex_tid_op';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['expose']['identifier'] = 'field_artisan_participation_ex_tid';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['expose']['multiple'] = TRUE;
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['expose']['remember_roles'] = array(
+  2 => '2',
+  1 => 0,
+  3 => 0,
+);
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_artisan_participation_ex_tid']['vocabulary'] = 'participation_in_exhibitions';
+$handler->display->display_options['path'] = 'artisans/advenced-search';
+$translatables['artisan_recherche_avancee'] = array(
+  t('Master'),
+  t('شركة'),
+  t('more'),
+  t('Search'),
+  t('Reset'),
+  t('Sort by'),
+  t('Asc'),
+  t('Desc'),
+  t('Items per page'),
+  t('- All -'),
+  t('Offset'),
+  t('« first'),
+  t('‹ previous'),
+  t('next ›'),
+  t('last »'),
+  t('No result fond.'),
+  t('field_artisans'),
+  t('Commercial name'),
+  t('First name'),
+  t('Last name'),
+  t('Birth date'),
+  t('Address'),
+  t('Email Address'),
+  t('Imprimer'),
+  t('View'),
+  t('Edit'),
+  t('artisan/edit/[nid]'),
+  t('Delete'),
+  t('Birthdate from '),
+  t('to'),
+  t('Sexe'),
+  t('School level'),
+  t('Family situation'),
+  t('Engage in social insurance'),
+  t('Professional qualification'),
+  t('Professional insurance'),
+  t('advanced_search'),
+  t('Advanced search'),
+  t('Birthdate berween '),
+  t('And'),
+  t('Type of activity'),
+  t('Creation date between'),
+  t('Sector'),
+  t('Domain'),
+  t('Profession'),
+  t('Activity place'),
+  t('Type of workshop use'),
+  t('Equipments'),
+  t('Techniques'),
+  t('Promotion'),
+  t('Participation in exhibitions'),
+);
